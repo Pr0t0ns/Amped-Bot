@@ -17,9 +17,9 @@ class Stat_commands(commands.Cog):
         await ctx.reply(embed=embed)
 
     @commands.command()
-    async def memebercount(self, ctx):
+    async def membercount(self, ctx):
         true_member_count = len([m for m in ctx.guild.members if not m.bot])
-        embed = self.Embed(title='Memeber Count', description=f"I have {true_member_count} users", color=blue).set_footer(text="Help with Slotth ;)")
+        embed = self.Embed(title='Member Count', description=f"I have {true_member_count} users", color=blue).set_footer(text="Help with Slotth ;)")
         await ctx.reply(embed=embed)
 
 async def setup(client):
