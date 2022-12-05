@@ -1,4 +1,0 @@
-red = 0xFF0000
-blue = 0x2E64FE
-yellow = 0xF7FE2E
-green = 0x2EFE2E
