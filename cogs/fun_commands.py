@@ -5,5 +5,5 @@ class Fun_commands(commands.Cog):
         self.client = client
     
     
-def setup(client):
-	client.add_cog(Fun_commands(client))
+async def setup(client):
+    await client.add_cog(Fun_commands(client))

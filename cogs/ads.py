@@ -8,5 +8,5 @@ class Bot_advertisments(commands.Cog):
     async def ads_test(self, ctx):
         pass
 
-def setup(client):
-	client.add_cog(Bot_advertisments(client))
+async def setup(client):
+    await client.add_cog(Bot_advertisments(client))

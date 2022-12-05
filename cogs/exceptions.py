@@ -1,6 +1,10 @@
 import discord
 from discord.ext import commands
-from .colors import red
+red = 0xFF0000
+blue = 0x2E64FE
+yellow = 0xF7FE2E
+green = 0x2EFE2E
+
 class exception_commands(commands.Cog):
     def __init__(self, client):
         self.client = client
@@ -12,5 +16,5 @@ class exception_commands(commands.Cog):
             embed = self.Embed(title=":x: Unknown Command", description=f"{error}", color=red)
             await ctx.reply(embed=embed)
 
-def setup(client):
-    client.add_cog(exception_commands(client))
+async def setup(client):
+    await client.add_cog(exception_commands(client))

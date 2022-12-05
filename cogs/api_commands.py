@@ -6,5 +6,5 @@ class api_commands(commands.Cog):
         self.Embed = discord.Embed
         
 
-def setup(client):
-	client.add_cog(api_commands(client))
+async def setup(client):
+    await client.add_cog(api_commands(client))
