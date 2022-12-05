@@ -4,7 +4,7 @@ from cogs.database import UserMySQLcommands, ServerMySQLcommands, GlobalDataMySQ
 
 cog_files = ['cogs.api_commands', 'cogs.moderation', 'cogs.stat_commands', 'cogs.economy', 'cogs.events', 'cogs.fun_commands', 'cogs.ads', 'cogs.exceptions']
 
-TOKEN = "MTA0OTA4NTgzMTk3MDgyMDI0Ng.GOKoaZ.aTIIzL0w6dR8eb4JWcy11cGTKF4urSu2XQ7tTw"
+TOKEN = ""
 client = commands.Bot(command_prefix='.', intents=discord.Intents().all())
 
 @client.event
