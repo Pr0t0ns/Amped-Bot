@@ -19,7 +19,9 @@ class Stat_commands(commands.Cog):
     @commands.command()
     async def membercount(self, ctx):
         true_member_count = len([m for m in ctx.guild.members if not m.bot])
-        embed = self.Embed(title='Member Count', description=f"I have {true_member_count} users", color=blue).set_footer(text="Help with Slotth ;)")
+        embed = self.Embed(title='Member Count', description=f"I have {true_member_count} users", color=blue)
+        embed.set_author(name="Hey! This was made by Slotth", url="https://dose.lol/ah", icon_url="https://cdn.discordapp.com/avatars/1041750176089505842/bf6caac42c82b063e0bf18a9e61d23aa.png?size=4096")
+
         await ctx.reply(embed=embed)
 
 async def setup(client):
