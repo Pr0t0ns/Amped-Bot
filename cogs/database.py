@@ -1,29 +1,21 @@
 import mysql.connector
 
-database = mysql.connector.connect (
-    host='127.0.0.1',
-    user='root',
-    passwd='root',
-    database='amped'
-)
-
-database.autocommit(True)
-
-write_cursor = database.cursor()
-read_cursor = database.cursor(buffered=True)
-
-
 class UserMySQLcommands:
     @staticmethod
-    def create_account(id: str):
+    def create_account(userid: str):
+        try:
+            write_cursor.execute(f'INSERT INTO `amped`.`users`(`DiscordID`,`UID`,`balance`,`Devbadge`,`OGbadge`) VALUES ("{userid}", 0.0, 1, 1);')
+            database.commit()
+            return "Success"
+        except Exception as err:
+            print(err)
+            return "Account already Exists!"
+    @staticmethod
+    def getbalance(userid: str):
         pass
 
     @staticmethod
-    def getbalance(id: str):
-        pass
-
-    @staticmethod
-    def tip_balance(id: str, balance: float):
+    def tip_balance(userid: str, balance: float):
         pass
 
 class ServerMySQLcommands:
@@ -42,3 +34,13 @@ class GlobalDataMySQLcommands:
         pass
 
     
+if __name__ == "__main__":
+    database = mysql.connector.connect (
+        host='127.0.0.1',
+        user='root',
+        passwd='root',
+        database='amped'
+    )
+    print("connected to MySQL database")
+    write_cursor = database.cursor()
+    read_cursor = database.cursor(buffered=True)
